@@ -1,0 +1,508 @@
+body
+  font: 13px 'Open Sans', sans-serif
+  color: #777777
+  padding: 0
+  margin: 0
+
+div,p,a,span,em,strong,img,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,td,tr,form,fieldset,label,select,input,textarea,address
+  padding: 0
+  margin: 0
+  outline: none
+  list-style: none
+
+*
+  box-sizing: border-box
+
+*
+  margin: 0
+  padding: 0
+
+/****sass****/
+
+@mixin border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  border-radius: $radius
+
+
+
+/************************************header**************************/
+.main-header
+  background: url("../img/header-bg.png") no-repeat 0 100%, #76c7c0
+.logo
+  padding: 25px 0
+  font-size: 30px
+  font-weight: 800
+  color: #ffffff
+  text-transform: uppercase
+  float: left
+  span
+    font-size: 25px
+    text-transform: none
+    font-weight: 400
+
+.active-dropdown
+  background: #e8645a
+  -moz-box-shadow: 0 3px 0 #e2534b
+  -webkit-box-shadow: 0 3px 0 #e2534b
+  box-shadow: 0 3px 0 #e2534b
+
+.main-menu
+  ul
+    position: relative
+    margin: 35px 0
+    float: right
+    .active
+      a
+        background: #62a29e
+        font-size: 14px
+        -moz-box-shadow: 0 3px 0 #528b86
+        -webkit-box-shadow: 0 3px 0 #528b86
+        box-shadow: 0 3px 0 #528b86
+    li
+      float: left
+      list-style-type: none
+      padding: 0 10px
+      a
+        padding: 5px 15px
+        color: #ffffff
+        text-transform: uppercase
+        @include border-radius(3px)
+        text-decoration: none
+        &:hover
+          background: #62a29e
+          -moz-box-shadow: 0 3px 0 #528b86
+          -webkit-box-shadow: 0 3px 0 #528b86
+          box-shadow: 0 3px 0 #528b86
+    .menu-dropdown
+      display: block
+      a
+        &:hover
+          background: #e8645a
+          -moz-box-shadow: 0 3px 0 #e2534b
+          -webkit-box-shadow: 0 3px 0 #e2534b
+          box-shadow: 0 3px 0 #e2534b
+        &:before
+          content: ""
+          background: url("../img/arrow-down.png") no-repeat 50% 50%
+          width: 10px
+          height: 10px
+          display: inline-block
+          margin-right: 5px
+      ul
+        position: absolute
+        z-index: 5
+        top: 5px
+        display: none
+        background: #e2534b
+        @include border-radius(5px)
+        &:before
+          position: absolute
+          content: ""
+          width: 0
+          height: 0
+          top: -7px
+          left: 15px
+          border-style: solid
+          border-width: 0 6.5px 8px 6.5px
+          border-color: transparent transparent #e2534b transparent
+        li
+          float: none
+          margin: 5px
+          padding: 0
+          a
+            background: #e5655d
+            text-transform: none
+            display: block
+            padding: 5px 15px 5px 5px
+            &:before
+              content: ""
+              background: url("../img/arrow-right.png") no-repeat 50% 50%
+              width: 10px
+              height: 10px
+              display: inline-block
+              margin-right: 5px
+            &:hover
+              background: #76c7c0
+              text-decoration: none
+              box-shadow: none
+
+
+/**********************content*****************/
+
+/*slider*****************************/
+
+#owl-demo .item
+  display: block
+  width: 100%
+  height: auto
+  padding: 160px 0
+
+
+#owl-demo
+  .owl-pagination
+    position: absolute
+    bottom: -30px
+    left: 50%
+    margin-left: -110px
+    .owl-page
+      width: 60px
+      height: 5px
+      background: #b0b8b9
+      margin-right: 10px
+      span
+        display: none !important
+    .active
+      background: #e2534b
+  .owl-controls
+    margin: 0
+    .owl-buttons
+      .owl-prev, .owl-next
+        width: 50px
+        height: 60px
+        position: absolute
+        opacity: 1
+        padding: 0
+        margin: -30px 0 0
+        top: 50%
+      .owl-prev
+        left: 0
+        background: url("../img/slider-left.png") 50% 50% no-repeat, #e8645a
+        border-radius: 0 5px 5px 0
+      .owl-next
+        right: 0
+        background: url("../img/slider-right.png") 50% 50% no-repeat, #e8645a
+        border-radius: 5px 0 5px 0
+
+
+
+
+.slider
+  background: #7f8c8c
+  text-align: center
+  /*padding: 160px 0
+  position: relative
+  h1
+    margin-bottom: 20px
+    span
+      font-size: 50px
+      font-weight: 800
+      color: #ffffff
+      background: #e2534b
+      @include border-radius(5px)
+      padding: 0 5px
+  p
+    background: #3f4646
+    font-size: 16px
+    color: #ffffff
+    width: 470px
+    margin: 0 auto
+    @include border-radius(5px)
+    padding: 10px 20px
+
+
+/*******top-services********/
+.top-services
+  background: #f3f3f3
+  padding: 50px 0
+
+.intro
+  background: #ececec
+  padding: 20px
+  @include border-radius(5px)
+  margin-bottom: 50px
+
+.wrap-header-intro
+  float: left
+  h3
+    font-size: 30px
+    font-weight: 600
+
+.view-more-btn
+  float: right
+  text-transform: uppercase
+  font-size: 20px
+  color: #ffffff
+  padding: 10px 30px
+  background: #e8645a
+  -moz-box-shadow: 0 3px 0 #e2534b
+  -webkit-box-shadow: 0 3px 0 #e2534b
+  box-shadow: 0 3px 0 #e2534b
+  outline: none
+  border: none
+  @include border-radius(5px)
+
+
+.services
+  li
+    padding: 0
+    .wrapper-services
+      background: url("../img/services-2.png") 50% 20% no-repeat, #f8f8f8
+      @include border-radius(5px)
+      padding: 20px
+      text-align: center
+      margin-right: 20px
+      -moz-box-shadow: 0 3px 0 #e5e6e6
+      -webkit-box-shadow: 0 3px 0 #e5e6e6
+      box-shadow: 0 3px 0 #e5e6e6
+      h4
+        font-weight: 800
+        font-size: 16px
+        color: 7f8c8c
+        text-transform: uppercase
+        margin-bottom: 30px
+        margin-top: 120px
+      p
+        color: #777777
+        margin-bottom: 90px
+      button
+        position: absolute
+        bottom: -28px
+        left: 50%
+        margin-left: -110px
+        font-size: 14px
+        padding: 15px 65px
+        background: #76c7c0
+        -moz-box-shadow: 0 3px 0 #62b9b0
+        -webkit-box-shadow: 0 3px 0 #62b9b0
+        box-shadow: 0 3px 0 #62b9b0
+        outline: none
+        color: #ffffff
+        border: none
+        @include border-radius(5px)
+    &:first-child
+      .wrapper-services
+        background: url("../img/services-1.png") 50% 20% no-repeat, #ffffff
+        button
+          background: #e8645a
+          -moz-box-shadow: 0 3px 0 #e2534b
+          -webkit-box-shadow: 0 3px 0 #e2534b
+          box-shadow: 0 3px 0 #e2534b
+
+/******about*****/
+.about
+  header
+    background: url("../img/about-bg.png") no-repeat, #ececec
+    text-align: center
+    position: relative
+
+    h2
+      color: #e1524b
+      font-size: 40px
+      margin-top: 40px
+      font-weight: 700
+      text-transform: uppercase
+    p
+      color: #777777
+      margin-bottom: 275px
+    .your-img-1
+      position: absolute
+      left: 50%
+      margin-left: -285px
+      top: 50%
+      z-index: 5
+    .your-img-2
+      position: absolute
+      left: 8%
+      top: 67%
+      z-index: 3
+    .your-img-3
+      position: absolute
+      left: 64%
+      top: 67%
+      z-index: 3
+
+.content-about
+  background: #f3f3f3
+  padding-top: 200px
+
+.why-choose-us
+  h4
+    font-weight: 800
+    font-size: 16px
+    margin-bottom: 30px
+  li
+    background: url("../img/arrow-chose-us.png") no-repeat 0 50%
+    padding-left: 20px
+    margin-bottom: 5px
+
+
+
+.our-skill
+  li
+    width: 25%
+    float: left
+    text-align: center
+    font-weight: 800
+    padding-top: 50px
+    background: url("../img/skill1.png") no-repeat 50% 32%
+    p
+      font-size: 30px
+      margin-bottom: 35px
+    h5
+      font-size: 16px
+      text-transform: uppercase
+      font-weight: 800
+
+.testimonials
+  h4
+    font-weight: 800
+    font-size: 16px
+    margin-bottom: 30px
+  .quote
+    background: #f8f8f8
+    padding: 10px 20px
+    margin-bottom: 5px
+    @include border-radius(5px)
+    span
+      font-style: italic
+  .name-client
+    text-align: center
+
+
+.our-happy-clients
+  padding-top: 50px
+
+  h4
+    font-weight: 800
+    font-size: 16px
+    margin-bottom: 30px
+
+    span
+      position: relative
+      &:after
+        content: url("../img/line.png")
+        position: absolute
+        margin-top: -3px
+        right: -900px
+
+
+
+#owl-demo2 .item
+  background: url("../img/jquery.png") 50% 50% no-repeat, #ffffff
+  width: 170px
+  height: 90px
+  padding: 30px 0px
+  margin: 10px
+  color: #FFF
+  -webkit-border-radius: 3px
+  -moz-border-radius: 3px
+  border-radius: 3px
+  text-align: center
+
+
+#owl-demo2
+  .owl-controls
+    margin: 0
+    .owl-buttons
+      .owl-prev, .owl-next
+        width: 40px
+        height: 40px
+        position: absolute
+        opacity: 1
+        padding: 0
+        margin: -30px 0 0
+        top: 50%
+        @include border-radius(5px)
+      .owl-prev
+        right: 60px
+        top: -30px
+        background: url("../img/clients-arrow-left.png") 50% 50% no-repeat, #98a3a3
+        &:hover
+          background: url("../img/clients-arrow-left.png") 50% 50% no-repeat, #e2534b
+      .owl-next
+        right: 9px
+        top: -30px
+        background: url("../img/clients-arrow-right.png") 50% 50% no-repeat, #98a3a3
+        &:hover
+          background: url("../img/clients-arrow-right.png") 50% 50% no-repeat, #e2534b
+
+/*********footer****/
+footer
+  background: url("../img/footer-bg.png") no-repeat, #76c7c0
+  padding-top: 50px
+  color: #ffffff
+
+
+.footer-part1
+  .logo-footer
+    font-size: 30px
+    font-weight: 800
+    color: #ffffff
+    text-transform: uppercase
+    margin-bottom: 20px
+    span
+      font-size: 25px
+      text-transform: none
+      font-weight: 400
+  address
+    margin: 10px 0
+    span
+      font-style: italic
+      font-size: 20px
+      margin-left: 10px
+
+.footer-part2, .footer-part3
+  h4
+    font-size: 20px
+    font-weight: 700
+    color: rgba(0,0,0,.5)
+    margin-bottom: 30px
+  ul
+    margin-left: 15px
+    li
+      background: url("../img/arrow-right.png") 0% 50% no-repeat
+      a
+        margin-left: 15px
+        color: #ffffff
+
+
+.footer-part4
+  h4
+    font-style: italic
+    margin-bottom: 30px
+    span
+      text-transform: uppercase
+      font-style: normal
+      font-weight: 700
+  ul
+    li
+      margin-bottom: 20px
+  article
+    img
+      float: left
+      margin-right: 20px
+    time
+      color: rgba(0,0,0,.5)
+      width: 70%
+      float: left
+    h6
+      width: 70%
+      float: left
+      margin-bottom: 10px
+
+
+
+
+
+
+.copyright-social
+  padding: 10px 0
+  background: #6ab3ac
+  .copyright
+    font-size: 12px
+    float: left
+    margin: 2px 0
+  ul
+    float: right
+    li
+      float: left
+      a
+        width: 22px
+        height: 22px
+        float: left
+        margin-left: 25px
+        background: url("../img/rss-ico.png")
+
+
